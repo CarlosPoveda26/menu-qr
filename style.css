@@ -1,0 +1,172 @@
+/* PALETA STEAKHOUSE RÚSTICA */
+:root {
+    --bg-dark: #1a1816; 
+    --bg-card: #24211e; 
+    --text-main: #e0e0e0;
+    --text-gold: #eab308;
+    --text-red: #dc2626;
+    
+    --font-title: 'Amatic SC', cursive; 
+    --font-name: 'Caveat', cursive; 
+    --font-body: 'Kalam', cursive; 
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    margin: 0;
+    padding: 0; 
+    position: relative;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+}
+
+/* =========================================
+   ESTRUCTURA DE PÁGINAS FIJAS
+   ========================================= */
+.menu-page {
+    max-width: 1140px; 
+    margin: 0 auto;
+    padding: 20px 35px; 
+    box-sizing: border-box;
+    page-break-after: always; 
+    break-after: page;
+    position: relative;
+}
+
+/* ARTE DE FONDO GIGANTE */
+.background-art {
+    position: fixed; 
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: -1; 
+    pointer-events: none; 
+    overflow: hidden; 
+}
+.bg-img { position: absolute; }
+.bg-campana { top: -300px; left: -300px; width: 1500px; opacity: 0.05; transform: rotate(-15deg); }
+.bg-doodle-left { top: -500px; left: -800px; width: 3000px; filter: invert(1) opacity(0.03); transform: rotate(5deg); }
+.bg-doodle-right { bottom: -500px; right: -800px; width: 3000px; filter: invert(1) opacity(0.03); transform: rotate(-10deg); }
+
+/* =========================================
+   ENCABEZADO
+   ========================================= */
+.premium-header {
+    display: flex; align-items: center; justify-content: center; gap: 25px;
+    margin-bottom: 12px; padding-bottom: 8px; border-bottom: 2px dashed #444;
+}
+.header-text-area { display: flex; flex-direction: column; }
+.pre-title { font-family: var(--font-name); color: var(--text-gold); font-size: 28px; margin: 0 0 -10px 0; font-weight: 400; }
+.main-title { font-family: var(--font-title); font-size: 78px; color: #ffffff; margin: 0; letter-spacing: 2px; text-shadow: 2px 2px 5px rgba(0,0,0,0.8); }
+.highlight { color: var(--text-red); }
+.tagline { font-family: var(--font-title); font-size: 25px; letter-spacing: 4px; color: #a3a3a3; margin: -5px 0 5px 0; }
+.separator-line { height: 3px; width: 80px; background-color: var(--text-red); border-radius: 5px; margin: 4px 0; }
+.quote { font-family: var(--font-name); font-size: 22px; color: #888; margin: 0; }
+
+/* =========================================
+   FOTOS Y EFECTOS
+   ========================================= */
+.fade-wrapper { position: relative; display: inline-block; width: 100%; margin-bottom: 8px; }
+.toro-wrapper { width: 140px; filter: drop-shadow(0 0 20px rgba(220, 38, 38, 0.15)); }
+.fade-wrapper img { width: 100%; display: block; position: relative; z-index: 1; }
+.food-photo { height: 135px; object-fit: cover; border-radius: 4px; } 
+.fade-wrapper::after { content: ""; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: radial-gradient(ellipse at center, rgba(26, 24, 22, 0) 30%, rgba(26, 24, 22, 1) 75%); pointer-events: none; z-index: 2; }
+
+/* =========================================
+   GRID DE 2 COLUMNAS
+   ========================================= */
+.menu-grid {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 35px; 
+}
+.page-2-grid { padding-top: 5px; }
+
+.menu-column { display: flex; flex-direction: column; }
+.highlight-column { background-color: var(--bg-card); padding: 15px 22px; border-radius: 12px; border: 1px dashed #444; }
+
+.menu-section { margin-bottom: 10px; }
+
+/* TÍTULOS DE SECCIÓN SEGUROS */
+.section-title {
+    font-family: var(--font-title); font-size: 44px; color: var(--text-gold); 
+    border-bottom: 2px solid #444; padding-bottom: 2px; margin-bottom: 10px; margin-top: 4px; letter-spacing: 1px;
+}
+
+/* =========================================
+   ITEMS DE COMIDA (FUENTES GRUESAS)
+   ========================================= */
+.menu-item { 
+    margin-bottom: 8px; 
+    /* ELIMINADA la regla page-break-inside que trababa la impresora */
+}
+.item-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 1px; border-bottom: 1px dotted #555; }
+.item-name { 
+    font-family: var(--font-name); 
+    font-size: 30px; 
+    color: #ffffff; 
+    font-weight: 700; 
+    margin: 0; 
+    letter-spacing: 1px; 
+} 
+.item-sub { font-size: 20px; color: #d1d1d1; margin-left: 5px; font-weight: 600; } 
+.item-price { 
+    font-family: var(--font-name); 
+    font-size: 28px; 
+    color: var(--text-gold); 
+    font-weight: 700;
+    padding-left: 5px; 
+} 
+.proximamente { font-size: 20px !important; }
+
+/* TEXTOS LEGIBLES Y NÍTIDOS */
+.item-desc { 
+    font-size: 19px; 
+    color: #e5e5e5; 
+    font-weight: 700; 
+    letter-spacing: 0.4px; 
+    line-height: 1.25; 
+    margin: 0; 
+} 
+
+/* CAJA PREMIUM */
+.premium-box { border: 2px dashed var(--text-gold); padding: 10px; border-radius: 8px; background: linear-gradient(145deg, #2a2000, #1a1816); margin-top: 4px; }
+.text-gold { color: var(--text-gold) !important; }
+
+/* LISTAS COMPACTAS (Bebidas y Adiciones) */
+.compact-list { list-style: none; padding: 0; margin: 0; }
+.compact-list li {
+    display: flex; justify-content: space-between; align-items: flex-end;
+    margin-bottom: 4px; border-bottom: 1px dotted #555; padding-bottom: 2px;
+}
+.list-name { 
+    font-family: var(--font-name); 
+    font-size: 23px; 
+    color: #e5e5e5; 
+    font-weight: 700; 
+} 
+.list-price { 
+    font-family: var(--font-name); 
+    font-size: 23px; 
+    color: var(--text-gold); 
+    font-weight: 700;
+} 
+
+/* =========================================
+   CONFIGURACIÓN DE IMPRESIÓN (OPTIMIZADA)
+   ========================================= */
+@media print {
+    @page { 
+        size: letter portrait; 
+        margin: 0; 
+    }
+    
+    /* Alivianamos el peso en la memoria de la impresora */
+    .toro-wrapper {
+        filter: none !important; /* Quita la sombra brillante del logo que traba la imprenta */
+    }
+    
+    .main-title {
+        text-shadow: none !important; /* Evita que el renderizado se congele */
+    }
+}
